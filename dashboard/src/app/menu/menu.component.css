@@ -1,0 +1,32 @@
+#lucro {
+  text-align: right;
+  align-self: right;
+  margin-left: 70%;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+#titulo {
+  margin-left: 30px;
+}
+
+.mat-list-item {
+  font-size: small;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #0e76a8;
+}

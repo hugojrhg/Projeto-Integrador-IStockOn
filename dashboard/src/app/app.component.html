@@ -1,0 +1,261 @@
+
+
+<!--
+<style>
+  #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .card-header {
+    font-size: large;
+    margin-left: 21.5px;
+  }
+
+  #customers td,
+  #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  #customers tr:hover {
+    background-color: #ddd;
+  }
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .button1 {
+    background-color: #4CAF50;
+    color: black;
+    border: 1px #4CAF50;
+    padding: 10px 33px;
+    margin: 4px 10px 0px 20px;
+    border-radius: 0.6rem;
+  }
+
+  .button1:hover {
+    background-color: #65bd68;
+    color: black;
+    transition-duration: 250ms;
+  }
+
+  .button3 {
+    background-color: #f44336;
+    color: black;
+    border: 1px #f44336;
+    padding: 10px 24px;
+    margin: 4px 10px 0px 20px;
+    border-radius: 0.6rem;
+  }
+
+  .button3:hover {
+    background-color: #c55b53;
+    color: black;
+    transition-duration: 250ms;
+  }
+
+  input[type=text],
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=number],
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+</style>
+-->
+
+
+<app-menu>
+  <!--
+  <nav aria-label="breadcrumb">
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Produtos</li>
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="card list-car">
+      <h5 class="card-header">Lista de Produtos</h5>
+      <div class="card-body">
+        <table class="table-responsive table-hover table-striped" id="customers">
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Quantidade em Estoque</th>
+              <th scope="col">Vendidos</th>
+              <th scope="col">Lucro</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let produto of produtos">
+              <td>{{produto.nome}}</td>
+              <td>{{produto.quantidade - produto.vendidos}}</td>
+              <td>{{produto.vendidos}}</td>
+              <td>{{produto.lucro}}</td>
+              <td class="d-grip gap-2 d-md-block">
+                <button type="button" class="button button1 btn-btnprimary" (click)="editProduto(produto)">Editar</button>
+                <button type="button" class="button button3 btn-btnprimary"
+                  (click)="deleteProduto(produto)">Deletar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  -->
+    <div class="card add-produto">
+      
+      <h5 class="card-header" style="margin-left: 40px;">Adicionar/Atualizar Produto</h5>
+      <div class="card-body">
+        <form id="add-form" (ngSubmit)="f.form.valid && saveProduto(f)" #f="ngForm" novalidate>
+          <div class="form-group">
+            <label for="id">Id</label>
+            <input type="number" [(ngModel)]="produto.id" id="id" name="id" #id="ngModel" required class="form-control"
+              [ngClass]="{ 'is-invalid': f.submitted && id.invalid }" placeholder="Digite o ID">
+            <div *ngIf="f.submitted && id.invalid" class="invalid-feedback">
+              <div *ngIf="id.errors.required">ID é obrigatório</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" [(ngModel)]="produto.nome" id="nome" name="nome" #nome="ngModel" required
+              class="form-control" [ngClass]="{ 'is-invalid': f.submitted && nome.invalid }"
+              placeholder="Digite o nome">
+            <div *ngIf="f.submitted && nome.invalid" class="invalid-feedback">
+              <div *ngIf="nome.errors.required">Nome é obrigatório</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="preco_compra">Preço de Compra</label>
+            <input type="number" [(ngModel)]="produto.preco_compra" id="preco_compra" name="preco_compra"
+              #preco_compra="ngModel" required class="form-control"
+              [ngClass]="{ 'is-invalid': f.submitted && preco_compra.invalid }" placeholder="Digite o preço de compra">
+            <div *ngIf="f.submitted && preco_compra.invalid" class="invalid-feedback">
+              <div *ngIf="preco_compra.errors.required">Preço de Compra é obrigatório</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="preco_venda">Preço de Venda</label>
+            <input type="number" [(ngModel)]="produto.preco_venda" id="preco_venda" name="preco_venda"
+              #preco_venda="ngModel" required class="form-control"
+              [ngClass]="{ 'is-invalid': f.submitted && preco_venda.invalid }" placeholder="Digite o preço de venda">
+            <div *ngIf="f.submitted && preco_venda.invalid" class="invalid-feedback">
+              <div *ngIf="preco_venda.errors.required">Preço de Compra é obrigatório</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="quantidade">Quantidade Adquirida</label>
+            <input type="number" [(ngModel)]="produto.quantidade" id="quantidade" name="quantidade"
+              #quantidade="ngModel" required class="form-control"
+              [ngClass]="{ 'is-invalid': f.submitted && quantidade.invalid }" placeholder="Digite a quantidade">
+            <div *ngIf="f.submitted && quantidade.invalid" class="invalid-feedback">
+              <div *ngIf="quantidade.errors.required">Quantidade é obrigatória</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="vendidos">Vendidos</label>
+            <input type="number" [(ngModel)]="produto.vendidos" id="vendidos" name="vendidos" #vendidos="ngModel"
+              required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && vendidos.invalid }"
+              placeholder="Digite o número de vendidos">
+            <div *ngIf="f.submitted && vendidos.invalid" class="invalid-feedback">
+              <div *ngIf="vendidos.errors.required">Vendidos é obrigatório</div>
+            </div>
+          </div>
+          <button type="submit" class="button button1">Salvar</button>
+          <button type="reset" class="button button3" (click)="cleanForm(f)">Cancelar</button>
+        </form>
+      </div>
+    </div>
+  
+
+
+  <div class = "row mb-5" >
+
+    <div class = "col-sm-6" *ngFor="let produto of produtos">
+
+      <div class = "card-box">
+
+        <div class = "card-corpo">
+          <h4 class = "card-title">{{produto.nome}}</h4>
+
+          <h6 class = "card-subtitle1" *ngIf="produto.lucro > 0">
+            <style>
+              .card-subtitle1{
+                color: green;
+              }
+            </style>
+            LUCRO = {{produto.lucro}}
+          </h6>
+          <h6 class = "card-subtitle2" *ngIf="produto.lucro == 0">
+            LUCRO = {{produto.lucro}}
+          </h6>
+          <h6 class = "card-subtitle3" *ngIf="produto.lucro < 0">
+            <style>
+              .card-subtitle3{
+                color: red;
+              }
+            </style>
+            LUCRO = {{produto.lucro}}
+          </h6>
+
+          <div class="d-grip gap-2 d-md-block">
+            <button type="button" class="button button1 btn-btnprimary" (click)="editProduto(produto)">Editar</button>
+            <button type="button" class="button button3 btn-btnprimary"
+              (click)="deleteProduto(produto)">Deletar</button>
+          </div>
+          
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  
+</app-menu>
