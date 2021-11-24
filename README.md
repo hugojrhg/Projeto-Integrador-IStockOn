@@ -1,7 +1,6 @@
 <h1 align="center"> Projeto Integralizador | iStock ON </h1>
 
 <h3 align="center">Projeto de gerenciamento de para pequenos negócios em desenvolvimento. </h2>
-<br></br>
 
 <details>
   <summary>Tecnologias utilizadas</summary>
