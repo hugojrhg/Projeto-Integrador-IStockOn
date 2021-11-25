@@ -21,11 +21,21 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ProdutoComponent } from './produto/produto.component';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
+const appRoutes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'produto', component: ProdutoComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
+    ProdutoComponent,
+    HomeComponent
   ],
   imports: [
     FormsModule,
@@ -45,6 +55,7 @@ import { environment } from '../environments/environment';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    RouterModule.forRoot(appRoutes),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

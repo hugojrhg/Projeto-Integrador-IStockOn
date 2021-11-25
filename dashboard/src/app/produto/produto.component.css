@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;900&display=swap');
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .card-header {
+    font-size: large;
+    margin-left: 21.5px;
+  }
+
+  #customers td,
+  #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  #customers tr:hover {
+    background-color: #ddd;
+  }
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .button1 {
+    background-color: #4CAF50;
+    color: black;
+    border: 1px #4CAF50;
+    padding: 10px 29px;
+    margin: 4px 10px 0px 20px;
+    border-radius: 0.6rem;
+  }
+
+  .button1:hover {
+    background-color: #65bd68;
+    color: black;
+    transition-duration: 250ms;
+  }
+
+  .button3 {
+    background-color: #f44336;
+    color: black;
+    border: 1px #f44336;
+    padding: 10px 24px;
+    margin: 4px 10px 0px 20px;
+    border-radius: 0.6rem;
+  }
+
+  .button3:hover {
+    background-color: #c55b53;
+    color: black;
+    transition-duration: 250ms;
+  }
+
+  input[type=text],
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=number],
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+
+  }
+
+  .card-box {
+    background-color: cornflowerblue;
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+    border-radius: 1.2rem;
+  }
+
+  .card-corpo {
+    text-align: center;
+    background-color: aliceblue;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0.8rem;
+    
+  }
+
+  .d-grip {
+    background-color: aliceblue;
+  }
+
+  .add-produto {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+    
+  }
+
+  @media (max-width: 480px) { 
+    .add-produto{
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .card-header{
+      margin-right: 20px;
+    }
+  }
+
+  
+
+
+ 

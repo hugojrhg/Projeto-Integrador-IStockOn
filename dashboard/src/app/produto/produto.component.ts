@@ -1,16 +1,14 @@
-import { _isNumberValue } from '@angular/cdk/coercion';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Produto } from './models/produto';
-import { ProdutoService } from './services/produto.service';
+import { Produto } from '../models/produto';
+import { ProdutoService } from '../services/produto.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-produto',
+  templateUrl: './produto.component.html',
+  styleUrls: ['./produto.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'dashboard';
+export class ProdutoComponent implements OnInit {
 
   produto = {} as Produto;
   produtos: Produto[];
@@ -55,9 +53,5 @@ export class AppComponent implements OnInit {
     form.resetForm();
     this.produto = {} as Produto;
   }
-
-
-
-
 
 }

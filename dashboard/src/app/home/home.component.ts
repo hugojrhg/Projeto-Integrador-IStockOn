@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
@@ -6,17 +7,11 @@ import { Produto } from '../models/produto';
 import { ProdutoService } from '../services/produto.service';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class MenuComponent implements OnInit {
-
-  produto = {} as Produto;
-  produtos: Produto[];
-  
-  produtoService: ProdutoService;
-  lucrototal: number;
+export class HomeComponent implements OnInit {
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -24,10 +19,9 @@ export class MenuComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver) { }
+
   ngOnInit(): void {
-    
   }
-  
 
 }
