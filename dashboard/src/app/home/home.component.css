@@ -1,0 +1,23 @@
+ .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #0e76a8;
+    box-shadow: 0 8px 12px 0 rgba(4, 3, 3, 0.2);
+  }
+
+  a {
+      text-decoration: none;
+      margin: 8px 8px 8px 0
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  @media (max-width: 480px) { 
+    a {
+      font-size: medium;
+      margin-right: 20px;
+    }
+  }
