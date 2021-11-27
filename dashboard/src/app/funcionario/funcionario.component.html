@@ -1,0 +1,134 @@
+
+<app-menu>
+
+
+        <div class="card add-funcionario">
+          <h5 class="card-header">
+            Adicionar/Atualizar Funcionario
+          </h5>
+          <div class="card-body">
+            <form
+              id="add-form"
+              (ngSubmit)="f.form.valid && saveFuncionario(f)"
+              #f="ngForm"
+              novalidate
+            >
+              <div class="form-group">
+                <label for="id">Id</label>
+                <input
+                  type="number"
+                  [(ngModel)]="funcionario.id"
+                  id="id"
+                  name="id"
+                  #id="ngModel"
+                  required
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': f.submitted && id.invalid }"
+                  placeholder="Digite o ID"
+                />
+                <div *ngIf="f.submitted && id.invalid" class="invalid-feedback">
+                  <div *ngIf="id.errors.required">ID é obrigatório</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input
+                  type="text"
+                  [(ngModel)]="funcionario.nome"
+                  id="nome"
+                  name="nome"
+                  #nome="ngModel"
+                  required
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': f.submitted && nome.invalid }"
+                  placeholder="Digite o nome"
+                />
+                <div *ngIf="f.submitted && nome.invalid" class="invalid-feedback">
+                  <div *ngIf="nome.errors.required">Nome é obrigatório</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input
+                  type="text"
+                  [(ngModel)]="funcionario.cpf"
+                  id="cpf"
+                  name="cpf"
+                  #cpf="ngModel"
+                  required
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': f.submitted && cpf.invalid }"
+                  placeholder="Digite o CPF"
+                />
+                <div
+                  *ngIf="f.submitted && cpf.invalid"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="cpf.errors.required">
+                    CPF é obrigatório
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="salario">Salário</label>
+                <input
+                  type="number"
+                  [(ngModel)]="funcionario.salario"
+                  id="salario"
+                  name="salario"
+                  #salario="ngModel"
+                  required
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': f.submitted && salario.invalid }"
+                  placeholder="Digite o salário"
+                />
+                <div
+                  *ngIf="f.submitted && salario.invalid"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="salario.errors.required">
+                    Salário é obrigatório
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="button button1">Salvar</button>
+              <button type="reset" class="button button3" (click)="cleanForm(f)">
+                Cancelar
+              </button>
+            </form>
+          </div>
+        </div>
+  
+    <div class="row mb-5">
+      <div class="col-sm-6" *ngFor="let funcionario of funcionarios">
+        <div class="card-box">
+          <div class="card-corpo">
+            <h4 class="card-title">{{ funcionario.nome }}</h4>
+  
+            <h6 class="card-subtitle1">
+              SALÁRIO = {{ funcionario.salario }}
+            </h6>
+  
+            <div class="d-grip gap-2 d-md-block">
+              <button
+                type="button"
+                class="button button1 btn-btnprimary"
+                (click)="editFuncionario(funcionario)"
+              >
+                Editar
+              </button>
+              <button
+                type="button"
+                class="button button3 btn-btnprimary"
+                (click)="deleteFuncionario(funcionario)"
+              >
+                Deletar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</app-menu>
+
+  

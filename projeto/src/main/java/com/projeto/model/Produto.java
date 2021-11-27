@@ -2,15 +2,12 @@ package com.projeto.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Produto {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	@Column(nullable = false)
 	private String nome;
@@ -22,6 +19,7 @@ public class Produto {
 	private int quantidade;
 	@Column(nullable = false)
 	private int vendidos;
+	
 	
 	public long getId() {
 		return id;
@@ -61,7 +59,9 @@ public class Produto {
 		float lucros = vendidos * preco_venda;
 		
 		float lucrototal = lucros - gastos;
+		
 		return lucrototal;
+
 	}
 
 	public float getPreco_venda() {
@@ -79,5 +79,5 @@ public class Produto {
 	public void setPreco_compra(float preco_compra) {
 		this.preco_compra = preco_compra;
 	}
-
+	
 }

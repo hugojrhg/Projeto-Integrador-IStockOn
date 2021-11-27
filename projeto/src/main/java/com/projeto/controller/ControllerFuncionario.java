@@ -39,8 +39,8 @@ public class ControllerFuncionario {
 	}
 
 	@RequestMapping(value = "/funcionario", method = RequestMethod.POST)
-	public Funcionario Post(@Valid @RequestBody Funcionario funcionario) {
-		return repositorio.save(funcionario);
+	public void Post(@Valid @RequestBody Funcionario funcionario) {
+		repositorio.save(funcionario);
 	}
 
 	@RequestMapping(value = "/funcionario/{id}", method = RequestMethod.PUT)
@@ -50,6 +50,8 @@ public class ControllerFuncionario {
 		if (oldFuncionario.isPresent()) {
 			Funcionario funcionario = oldFuncionario.get();
 			funcionario.setNome(newFuncionario.getNome());
+			funcionario.setCpf(newFuncionario.getCpf());
+			funcionario.setSalario(newFuncionario.getSalario());
 			repositorio.save(funcionario);
 			return new ResponseEntity<Funcionario>(funcionario, HttpStatus.OK);
 		} else

@@ -26,6 +26,11 @@ export class ProdutoComponent implements OnInit {
   }
 
   public saveProduto(form: NgForm) {
+    if (this.produtos.length == 0) {
+      this.produtoService.saveProduto(this.produto).subscribe(() => {
+        this.cleanForm(form);
+      });
+    }
     for (let i = 0; i < this.produtos.length; i++) {
       if (this.produto.id == this.produtos[i].id) {
         this.produtoService.updateProduto(this.produto).subscribe(() => {
