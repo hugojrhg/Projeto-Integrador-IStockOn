@@ -32,6 +32,7 @@
   .card-header {
     font-size: large;
     margin-left: 21.5px;
+    background-color: #f2f2f2;
   }
 
   #customers td,
@@ -58,11 +59,13 @@
 
   .button1 {
     background-color: #4CAF50;
-    color: black;
+    color: #f2f2f2;
     border: 1px #4CAF50;
     padding: 10px 29px;
     margin: 4px 10px 0px 20px;
     border-radius: 0.6rem;
+    letter-spacing: 1px;
+    box-shadow: 3px 3px 3px 0 rgba(2, 2, 2, 0.296);
   }
 
   .button1:hover {
@@ -73,11 +76,13 @@
 
   .button3 {
     background-color: #f44336;
-    color: black;
+    color: #f2f2f2;
     border: 1px #f44336;
     padding: 10px 24px;
     margin: 4px 10px 0px 20px;
     border-radius: 0.6rem;
+    letter-spacing: 1px;
+    box-shadow: 3px 3px 3px 0 rgba(2, 2, 2, 0.296);
   }
 
   .button3:hover {
@@ -156,6 +161,10 @@
     margin-bottom: 30px;
     box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
     
+  }
+
+  .row {
+    background-color: #def3fc;
   }
 
   @media (max-width: 480px) { 

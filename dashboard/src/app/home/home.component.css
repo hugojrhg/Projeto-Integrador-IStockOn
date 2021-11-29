@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&display=swap');
+
  .mat-toolbar.mat-primary {
     position: sticky;
     top: 0;
@@ -8,7 +10,13 @@
 
   a {
       text-decoration: none;
-      margin: 8px 8px 8px 0
+      margin: 8px 8px 8px 0;
+      font-size: medium;
+      color: aqua;
+  }
+
+  a:hover {
+    color: rgb(48, 44, 44);
   }
 
   .spacer {
@@ -21,3 +29,120 @@
       margin-right: 20px;
     }
   }
+  
+.conteudo {
+  width: 800px;
+  height: auto;
+  margin: auto;
+  margin-left: 5%;
+  color: black;
+  position: relative;
+  box-shadow: 4px 8px 12px 8px rgba(28, 22, 22, 0.2);
+  border-radius: 1.2rem;
+}
+
+.conteudo .subtexto {
+  padding-left: 26px;
+  padding-bottom: 25px;
+  margin-left: 4px;
+  letter-spacing: 1.2px;
+  line-height: 30px;
+}
+
+.conteudo h1 {
+  font-size: 50px;
+  font-family: 'M PLUS Rounded 1c';
+  padding-left: 28px;
+  padding-top: 18px;
+  margin-top: 24%;
+}
+
+
+.conteudo-1 { 
+  width: 800px;
+  height: 200px;
+  margin: auto;
+  margin-right: 5%;
+  margin-top: 400px;
+  color: black;
+  position: relative;
+  box-shadow: 4px 8px 12px 8px rgba(28, 22, 22, 0.2);
+  border-radius: 1.2rem;
+}
+
+.conteudo-1 .subtexto-1 {
+  padding-left: 26px;
+  padding-bottom: 25px;
+  margin-left: 4px;
+  letter-spacing: 1.2px;
+  line-height: 30px;
+}
+
+.conteudo-1 h1 {
+  font-size: 50px;
+  font-family: 'M PLUS Rounded 1c';
+  padding-left: 28px;
+  padding-top: 18px;
+  margin-top: 24%;
+}
+
+.ilustration {
+  width: auto;
+  height: 500px;
+  position: absolute;
+  top: -130px;
+  left: 830px;
+  image-rendering: high-quality;
+}
+
+.logo {
+  margin-left: 20px;
+  font-size: larger;
+  letter-spacing: 1px;
+  font-family: 'M PLUS Rounded 1c';
+  text-shadow: 0.1em 0.1em 0.2em rgba(19, 14, 14, 0.515);
+}
+
+.button-home {
+  letter-spacing: 1px;
+  margin-right: 20px;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.divisor {
+  margin-top: 12px;
+  margin-right: 20px;
+}
+
+.button-home-2 {
+  margin-right: 40px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.animation {
+  margin-left: -244px;
+  margin-top: -380px;
+}
+
+.parte-2 {
+  box-shadow: 0 8px 12px 0 rgba(4, 3, 3, 0.2);
+}
+
+.text-footer {
+  margin-top: 80px;
+}
+
+.senac {
+  width: auto;
+  height: 80px;
+}
+
+.patrocinadores {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 80px;
+  padding-bottom: 80px;
+}
