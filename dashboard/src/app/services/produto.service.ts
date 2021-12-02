@@ -11,7 +11,7 @@ import { throwError } from 'rxjs';
 })
 export class ProdutoService {
 
-  url = 'http://localhost:8080/';
+  url = 'https://istockonback.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 

@@ -18,5 +18,14 @@ public class CorsConfiguration implements WebMvcConfigurer {
         registry.addMapping("/funcionario/**")
         .allowedOrigins("http://localhost:4200")
         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS",  "HEAD", "TRACE", "CONNECT");
-    }
+        registry.addMapping("/produto/**")
+        .allowedOrigins("https://istockon.herokuapp.com/")
+        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS",  "HEAD", "TRACE", "CONNECT");
+	    registry.addMapping("/lucro/**")
+	    .allowedOrigins("https://istockon.herokuapp.com/")
+	    .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS",  "HEAD", "TRACE", "CONNECT");
+	    registry.addMapping("/funcionario/**")
+	    .allowedOrigins("https://istockon.herokuapp.com/")
+	    .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS",  "HEAD", "TRACE", "CONNECT");
+	    }
 }

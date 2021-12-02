@@ -11,7 +11,7 @@ import { Funcionario } from '../models/funcionario';
 })
 export class FuncionarioService {
 
-  url = 'http://localhost:8080/';
+  url = 'https://istockonback.herokuapp.com/';
 
   constructor(private httpClient: HttpClient) { }
 
